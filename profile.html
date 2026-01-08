@@ -29,6 +29,31 @@
   <div class="top-date" data-today></div>
 
   <main class="container">
+    <section class="panel">
+  <h2>Account</h2>
+  <div class="desc" data-auth-status>Loading...</div>
+
+  <div data-auth-box style="margin-top:10px;">
+    <input class="btn" style="width:100%; margin-bottom:10px; text-align:left;"
+           data-email placeholder="email" />
+    <input class="btn" style="width:100%; margin-bottom:10px; text-align:left;"
+           data-pass type="password" placeholder="password" />
+    <div class="toolbar">
+      <button class="btn" data-signup>Sign up</button>
+      <button class="btn" data-signin>Sign in</button>
+    </div>
+    <div class="notice">Tip: if you enabled email confirmation, check your inbox.</div>
+  </div>
+
+  <div data-user-panel style="display:none; margin-top:10px;">
+    <pre class="output" data-stats></pre>
+    <div class="toolbar">
+      <button class="btn" data-add-gem>+1 gem (test)</button>
+      <button class="btn" data-signout>Sign out</button>
+    </div>
+  </div>
+</section>
+
     <div class="page-head">
       <h1>Profile</h1>
       <div class="meta"><a href="index.html">Home</a> / profile</div>
@@ -67,3 +92,4 @@
   <script src="app.js"></script>
 </body>
 </html>
+
