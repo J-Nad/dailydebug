@@ -4,95 +4,95 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Daily Debug — Profile</title>
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="./styles.css" />
 </head>
 <body>
 
-  <div class="fab-wrap"><div class="fab" data-menu-btn>MENU</div></div>
-  <div class="fab-right">
-    <div class="fab" data-archive-btn>ARC</div>
-    <div class="fab" data-streak-btn>STR</div>
-    <div class="fab" data-notifs-btn>NOT</div>
-    <div class="fab" data-profile-btn>PRO</div>
+  <!-- Floating Menu Circle (left) -->
+  <div class="fab-wrap">
+    <div class="fab" role="button" tabindex="0" aria-label="Menu" data-menu-btn>MENU</div>
   </div>
 
+  <!-- Floating Circles (right) -->
+  <div class="fab-right" aria-label="Quick actions">
+    <div class="fab" role="button" tabindex="0" aria-label="Archive" data-archive-btn>ARC</div>
+    <div class="fab" role="button" tabindex="0" aria-label="Streak" data-streak-btn>STR</div>
+    <div class="fab" role="button" tabindex="0" aria-label="Notifications" data-notifs-btn>NOT</div>
+    <div class="fab" role="button" tabindex="0" aria-label="Profile" data-profile-btn>PRO</div>
+  </div>
+
+  <!-- Side Nav -->
   <div class="sidenav-backdrop"></div>
-  <aside class="sidenav">
+  <aside class="sidenav" aria-label="Side navigation">
     <div style="display:flex; justify-content:space-between; align-items:center;">
       <h2>Menu</h2>
       <button class="btn" data-close-nav>Close</button>
     </div>
-    <a href="pricing.html">Pricing</a>
-    <a href="profile.html">Profile</a>
+    <a href="./pricing.html">Pricing</a>
+    <a href="./profile.html">Profile</a>
+    <div class="notice">No navbar. Just vibes.</div>
   </aside>
 
   <div class="top-date" data-today></div>
 
   <main class="container">
-    <section class="panel">
-  <h2>Account</h2>
-  <div class="desc" data-auth-status>Loading...</div>
-
-  <div data-auth-box style="margin-top:10px;">
-    <input class="btn" style="width:100%; margin-bottom:10px; text-align:left;"
-           data-email placeholder="email" />
-    <input class="btn" style="width:100%; margin-bottom:10px; text-align:left;"
-           data-pass type="password" placeholder="password" />
-    <div class="toolbar">
-      <button class="btn" data-signup>Sign up</button>
-      <button class="btn" data-signin>Sign in</button>
-    </div>
-    <div class="notice">Tip: if you enabled email confirmation, check your inbox.</div>
-  </div>
-
-  <div data-user-panel style="display:none; margin-top:10px;">
-    <pre class="output" data-stats></pre>
-    <div class="toolbar">
-      <button class="btn" data-add-gem>+1 gem (test)</button>
-      <button class="btn" data-signout>Sign out</button>
-    </div>
-  </div>
-</section>
-
     <div class="page-head">
       <h1>Profile</h1>
-      <div class="meta"><a href="index.html">Home</a> / profile</div>
+      <div class="meta"><a href="./index.html">Home</a> / profile</div>
     </div>
 
     <div class="hr"></div>
 
     <div class="grid">
+
+      <!-- ACCOUNT PANEL (REAL) -->
       <section class="panel">
-        <h2>User</h2>
-        <div class="desc">
-          <p><strong>Username:</strong> guest</p>
-          <p><strong>Plan:</strong> free</p>
-          <p><strong>Member since:</strong> (mock)</p>
+        <h2>Account</h2>
+        <div class="desc" data-auth-status>Loading...</div>
+
+        <div data-auth-box style="margin-top:10px;">
+          <input class="btn" style="width:100%; margin-bottom:10px; text-align:left;"
+                 data-email placeholder="email" />
+          <input class="btn" style="width:100%; margin-bottom:10px; text-align:left;"
+                 data-pass type="password" placeholder="password" />
+          <div class="toolbar">
+            <button class="btn" data-signup>Sign up</button>
+            <button class="btn" data-signin>Sign in</button>
+          </div>
+          <div class="notice">Tip: if you enabled email confirmation, check your inbox.</div>
         </div>
-        <div class="notice">Later: edit name, avatar, settings, linked accounts.</div>
+
+        <div data-user-panel style="display:none; margin-top:10px;">
+          <div class="toolbar">
+            <button class="btn" data-add-gem>+1 gem (test)</button>
+            <button class="btn" data-signout>Sign out</button>
+          </div>
+        </div>
       </section>
 
+      <!-- LIVE STATS PANEL (REAL) -->
       <section class="panel">
-        <h2>Stats</h2>
-        <div class="desc">
-          <p><strong>Current streak:</strong> (mock)</p>
-          <p><strong>Challenges solved:</strong> (mock)</p>
-          <p><strong>Best streak:</strong> (mock)</p>
+        <h2>Stats (Live)</h2>
+        <pre class="output" data-stats>
+Sign in to load your stats.
+        </pre>
+        <div class="notice">
+          If this never loads after signing in, your Supabase URL/key or RLS/policies are the issue.
         </div>
-        <a class="btn" href="streak.html">View streak</a>
       </section>
+
     </div>
   </main>
 
   <footer class="footer">
     <div class="left">© DailyDebug™</div>
-    <div class="right"><a href="mailto:help@dailydebug.example">Ask a question</a></div>
+    <div class="right">
+      <a href="mailto:help@dailydebug.example">Ask a question</a>
+    </div>
   </footer>
+
+  <!-- IMPORTANT: profileAuth must be a module -->
   <script type="module" src="./profileAuth.js"></script>
   <script src="./app.js"></script>
-
-  <script src="app.js"></script>
 </body>
 </html>
-
-
