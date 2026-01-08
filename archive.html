@@ -4,57 +4,127 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Daily Debug — Archive</title>
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="./styles.css" />
 </head>
 <body>
 
-  <div class="fab-wrap"><div class="fab" data-menu-btn>MENU</div></div>
-  <div class="fab-right">
-    <div class="fab" data-archive-btn>ARC</div>
-    <div class="fab" data-streak-btn>STR</div>
-    <div class="fab" data-notifs-btn>NOT</div>
-    <div class="fab" data-profile-btn>PRO</div>
+  <!-- Floating Menu (left) -->
+  <div class="fab-wrap">
+    <div class="fab" role="button" tabindex="0" aria-label="Menu" data-menu-btn>
+      MENU
+    </div>
   </div>
 
+  <!-- Floating Icons (right) -->
+  <div class="fab-right" aria-label="Quick actions">
+    <!-- Home -->
+    <div class="fab" role="button" tabindex="0" aria-label="Home" data-home-btn>
+      <svg viewBox="0 0 24 24"><path fill="currentColor" d="M12 3l9 8h-3v10h-5v-6H11v6H6V11H3z"/></svg>
+    </div>
+
+    <!-- Archive -->
+    <div class="fab" role="button" tabindex="0" aria-label="Archive" data-archive-btn>
+      <svg viewBox="0 0 24 24">
+        <path fill="currentColor" d="M3 7h18v4H3z"/>
+        <path fill="currentColor" d="M5 11h14v10H5z"/>
+        <path fill="currentColor" d="M9 14h6v2H9z"/>
+      </svg>
+    </div>
+
+    <!-- Streak -->
+    <div class="fab" role="button" tabindex="0" aria-label="Streak" data-streak-btn>
+      <svg viewBox="0 0 24 24">
+        <path fill="currentColor" d="M12 2c2 4-1 5 1 8 1 2 4 2 4 7a5 5 0 1 1-10 0c0-2 1-3 2-4 1-1 2-2 3-4z"/>
+      </svg>
+    </div>
+
+    <!-- Notifications -->
+    <div class="fab" role="button" tabindex="0" aria-label="Notifications" data-notifs-btn>
+      <svg viewBox="0 0 24 24">
+        <path fill="currentColor" d="M12 22a2 2 0 0 0 2-2H10a2 2 0 0 0 2 2zm6-6V11a6 6 0 1 0-12 0v5L4 18v1h16v-1z"/>
+      </svg>
+    </div>
+
+    <!-- Profile -->
+    <div class="fab" role="button" tabindex="0" aria-label="Profile" data-profile-btn>
+      <svg viewBox="0 0 24 24">
+        <path fill="currentColor" d="M12 12a4 4 0 1 0-4-4 4 4 0 0 0 4 4zm0 2c-4 0-8 2-8 5v1h16v-1c0-3-4-5-8-5z"/>
+      </svg>
+    </div>
+  </div>
+
+  <!-- Side Nav -->
   <div class="sidenav-backdrop"></div>
-  <aside class="sidenav">
+  <aside class="sidenav" aria-label="Side navigation">
     <div style="display:flex; justify-content:space-between; align-items:center;">
       <h2>Menu</h2>
       <button class="btn" data-close-nav>Close</button>
     </div>
-    <a href="pricing.html">Pricing</a>
-    <a href="profile.html">Profile</a>
+
+    <a href="./pricing.html">Pricing</a>
+    <a href="./profile.html">Profile</a>
+
+    <button class="btn" style="width:100%; margin-top:6px;" data-logout-btn>
+      Log out
+    </button>
+
+    <div class="notice" data-auth-mini></div>
   </aside>
 
+  <!-- Notifications Popover -->
+  <div class="notif-pop" data-notif-pop>
+    <h3>Notifications</h3>
+    <div data-notif-list>(loading)</div>
+  </div>
+
+  <!-- Date -->
   <div class="top-date" data-today></div>
 
+  <!-- Main -->
   <main class="container">
     <div class="page-head">
       <h1>Archive</h1>
-      <div class="meta"><a href="index.html">Home</a> / archive</div>
+      <div class="meta"><a href="./index.html">Home</a> / archive</div>
     </div>
 
     <div class="hr"></div>
 
+    <!-- Day selector -->
     <section class="panel">
-      <h2>Past challenges</h2>
+      <h2>Past Days</h2>
       <div class="desc">
-        <p>Placeholder list (static):</p>
-        <ul>
-          <li>Day 1 — Easy — “Print the sum”</li>
-          <li>Day 2 — Medium — “Count evens”</li>
-          <li>Day 3 — Hard — “Memoized Fibonacci”</li>
-        </ul>
+        Browse previous Daily Debug challenges (read-only).
       </div>
-      <div class="notice">Later: filter by date, difficulty, solved/unsolved.</div>
+
+      <select
+        class="btn"
+        style="width:100%; text-align:left;"
+        data-archive-select>
+      </select>
+    </section>
+
+    <!-- Problems -->
+    <section class="panel" style="margin-top:14px;">
+      <h2>Problems</h2>
+      <div class="desc" data-archive-out>
+        Loading archive…
+      </div>
     </section>
   </main>
 
+  <!-- Footer -->
   <footer class="footer">
     <div class="left">© DailyDebug™</div>
-    <div class="right"><a href="mailto:help@dailydebug.example">Ask a question</a></div>
+    <div class="right">
+      <a href="mailto:help@dailydebug.example">Ask a question</a>
+    </div>
   </footer>
 
-  <script src="app.js"></script>
+  <!-- Scripts -->
+  <script type="module" src="./archiveClient.js"></script>
+  <script type="module" src="./notificationsClient.js"></script>
+  <script type="module" src="./authMini.js"></script>
+  <script src="./app.js"></script>
+
 </body>
 </html>
