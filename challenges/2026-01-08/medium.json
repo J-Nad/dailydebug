@@ -1,0 +1,21 @@
+{
+  "title": "Count Evens",
+  "gems": 2,
+  "description": "This function should return the count of even numbers in the list. Fix the condition.",
+  "lines": [
+    { "locked": true,  "text": "# DailyDebug Medium" },
+    { "locked": true,  "text": "def count_evens(nums):" },
+    { "locked": true,  "text": "    c = 0" },
+    { "locked": true,  "text": "    for n in nums:" },
+    { "locked": false, "text": "        if n % 2 == 1:" },
+    { "locked": true,  "text": "            c += 1" },
+    { "locked": true,  "text": "    return c" },
+    { "locked": true,  "text": "" },
+    { "locked": true,  "text": "print(count_evens([1,2,3,4,5,6]))" }
+  ],
+  "tests": [
+    { "name": "basic", "code": "assert count_evens([1,2,3,4,5,6]) == 3" },
+    { "name": "empty", "code": "assert count_evens([]) == 0" },
+    { "name": "all even", "code": "assert count_evens([2,4,6]) == 3" }
+  ]
+}
