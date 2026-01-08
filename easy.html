@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Daily Debug — Easy</title>
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="./styles.css" />
 </head>
 <body>
 
@@ -25,16 +25,16 @@
       <h2>Menu</h2>
       <button class="btn" data-close-nav>Close</button>
     </div>
-    <a href="pricing.html">Pricing</a>
-    <a href="profile.html">Profile</a>
+    <a href="./pricing.html">Pricing</a>
+    <a href="./profile.html">Profile</a>
   </aside>
 
   <div class="top-date" data-today></div>
 
   <main class="container">
     <div class="page-head">
-      <h1>Easy Debug</h1>
-      <div class="meta"><a href="index.html">Home</a> / easy</div>
+      <h1 data-ch-title>Easy</h1>
+      <div class="meta"><a href="./index.html">Home</a> / easy</div>
     </div>
 
     <div class="hr"></div>
@@ -42,28 +42,15 @@
     <div class="grid">
       <section class="panel">
         <h2>Description</h2>
-        <p class="desc">
-          This program should print the sum of 2 and 3.
-          One unlocked line contains a tiny syntax bug. Fix it.
-        </p>
+        <p class="desc" data-desc>Loading today’s problem…</p>
         <div class="notice">
-          Locked lines are shaded. Unlocked lines are plain.
-          (This is a static mockup — editor locking comes later.)
+          Locked lines are shaded. Only unlocked lines are editable.
         </div>
       </section>
 
       <section class="panel">
         <h2>Python Editor</h2>
-
-        <div class="editor" aria-label="Mock editor">
-<span class="locked"># DailyDebug (Easy)</span>
-<span class="locked">def add(a, b):</span>
-<span class="locked">    return a + b</span>
-<span class="locked"></span>
-<span class="locked">x = 2</span>
-<span class="locked">y = 3</span>
-<span class="unlocked">print(add(x, y)</span>
-        </div>
+        <div class="editor" data-editor></div>
 
         <div class="toolbar">
           <button class="btn" data-compile>Compile</button>
@@ -82,6 +69,10 @@
     <div class="right"><a href="mailto:help@dailydebug.example">Ask a question</a></div>
   </footer>
 
-  <script src="app.js"></script>
+  <script type="module">
+    import { initChallengePage } from "./challengePage.js";
+    initChallengePage({ difficulty: "easy" });
+  </script>
+  <script src="./app.js"></script>
 </body>
 </html>
