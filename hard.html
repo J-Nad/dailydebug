@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Daily Debug — Hard</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <div class="fab-wrap"><div class="fab" data-menu-btn>MENU</div></div>
+  <div class="fab-right">
+    <div class="fab" data-archive-btn>ARC</div>
+    <div class="fab" data-streak-btn>STR</div>
+    <div class="fab" data-notifs-btn>NOT</div>
+    <div class="fab" data-profile-btn>PRO</div>
+  </div>
+
+  <div class="sidenav-backdrop"></div>
+  <aside class="sidenav">
+    <div style="display:flex; justify-content:space-between; align-items:center;">
+      <h2>Menu</h2>
+      <button class="btn" data-close-nav>Close</button>
+    </div>
+    <a href="pricing.html">Pricing</a>
+    <a href="profile.html">Profile</a>
+  </aside>
+
+  <div class="top-date" data-today></div>
+
+  <main class="container">
+    <div class="page-head">
+      <h1>Hard Debug</h1>
+      <div class="meta"><a href="index.html">Home</a> / hard</div>
+    </div>
+
+    <div class="hr"></div>
+
+    <div class="grid">
+      <section class="panel">
+        <h2>Description</h2>
+        <p class="desc">
+          This program should compute the nth Fibonacci number efficiently using memoization.
+          There’s a subtle bug that breaks caching. Fix the unlocked line(s). One blank line is provided.
+        </p>
+        <div class="notice">Goal: fib(10) should be 55.</div>
+      </section>
+
+      <section class="panel">
+        <h2>Python Editor</h2>
+        <div class="editor">
+<span class="locked"># DailyDebug (Hard)</span>
+<span class="locked">def fib(n, memo=None):</span>
+<span class="locked">    if memo is None:</span>
+<span class="locked">        memo = {}</span>
+<span class="locked">    if n in memo:</span>
+<span class="locked">        return memo[n]</span>
+<span class="locked">    if n &lt;= 1:</span>
+<span class="locked">        return n</span>
+<span class="unlocked">    memo = {n: fib(n-1, memo) + fib(n-2, memo)}</span>
+<span class="unlocked"></span>
+<span class="locked">    return memo[n]</span>
+<span class="locked"></span>
+<span class="locked">print(fib(10))</span>
+        </div>
+
+        <div class="toolbar">
+          <button class="btn" data-compile>Compile</button>
+          <button class="btn" data-submit>Submit</button>
+        </div>
+
+        <div class="hr"></div>
+        <h2>Output</h2>
+        <div class="output" data-output>[output will appear here]</div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="left">© DailyDebug™</div>
+    <div class="right"><a href="mailto:help@dailydebug.example">Ask a question</a></div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

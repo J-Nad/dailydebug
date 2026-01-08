@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Daily Debug — Easy</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <div class="fab-wrap">
+    <div class="fab" role="button" tabindex="0" aria-label="Menu" data-menu-btn>MENU</div>
+  </div>
+
+  <div class="fab-right">
+    <div class="fab" role="button" tabindex="0" aria-label="Archive" data-archive-btn>ARC</div>
+    <div class="fab" role="button" tabindex="0" aria-label="Streak" data-streak-btn>STR</div>
+    <div class="fab" role="button" tabindex="0" aria-label="Notifications" data-notifs-btn>NOT</div>
+    <div class="fab" role="button" tabindex="0" aria-label="Profile" data-profile-btn>PRO</div>
+  </div>
+
+  <div class="sidenav-backdrop"></div>
+  <aside class="sidenav">
+    <div style="display:flex; justify-content:space-between; align-items:center;">
+      <h2>Menu</h2>
+      <button class="btn" data-close-nav>Close</button>
+    </div>
+    <a href="pricing.html">Pricing</a>
+    <a href="profile.html">Profile</a>
+  </aside>
+
+  <div class="top-date" data-today></div>
+
+  <main class="container">
+    <div class="page-head">
+      <h1>Easy Debug</h1>
+      <div class="meta"><a href="index.html">Home</a> / easy</div>
+    </div>
+
+    <div class="hr"></div>
+
+    <div class="grid">
+      <section class="panel">
+        <h2>Description</h2>
+        <p class="desc">
+          This program should print the sum of 2 and 3.
+          One unlocked line contains a tiny syntax bug. Fix it.
+        </p>
+        <div class="notice">
+          Locked lines are shaded. Unlocked lines are plain.
+          (This is a static mockup — editor locking comes later.)
+        </div>
+      </section>
+
+      <section class="panel">
+        <h2>Python Editor</h2>
+
+        <div class="editor" aria-label="Mock editor">
+<span class="locked"># DailyDebug (Easy)</span>
+<span class="locked">def add(a, b):</span>
+<span class="locked">    return a + b</span>
+<span class="locked"></span>
+<span class="locked">x = 2</span>
+<span class="locked">y = 3</span>
+<span class="unlocked">print(add(x, y)</span>
+        </div>
+
+        <div class="toolbar">
+          <button class="btn" data-compile>Compile</button>
+          <button class="btn" data-submit>Submit</button>
+        </div>
+
+        <div class="hr"></div>
+        <h2>Output</h2>
+        <div class="output" data-output>[output will appear here]</div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="left">© DailyDebug™</div>
+    <div class="right"><a href="mailto:help@dailydebug.example">Ask a question</a></div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

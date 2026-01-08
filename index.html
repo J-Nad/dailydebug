@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Daily Debug</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- Floating Menu Circle (left) -->
+  <div class="fab-wrap">
+    <div class="fab" role="button" tabindex="0" aria-label="Menu" data-menu-btn>MENU</div>
+  </div>
+
+  <!-- Floating Circles (right) -->
+  <div class="fab-right" aria-label="Quick actions">
+    <div class="fab" role="button" tabindex="0" aria-label="Archive" data-archive-btn>ARC</div>
+    <div class="fab" role="button" tabindex="0" aria-label="Streak" data-streak-btn>STR</div>
+    <div class="fab" role="button" tabindex="0" aria-label="Notifications" data-notifs-btn>NOT</div>
+    <div class="fab" role="button" tabindex="0" aria-label="Profile" data-profile-btn>PRO</div>
+  </div>
+
+  <!-- Side Nav -->
+  <div class="sidenav-backdrop"></div>
+  <aside class="sidenav" aria-label="Side navigation">
+    <div style="display:flex; justify-content:space-between; align-items:center;">
+      <h2>Menu</h2>
+      <button class="btn" data-close-nav>Close</button>
+    </div>
+    <a href="pricing.html">Pricing</a>
+    <a href="profile.html">Profile</a>
+    <div class="notice">No navbar. Just vibes.</div>
+  </aside>
+
+  <div class="top-date" data-today></div>
+
+  <main class="container">
+    <h1 class="title">Daily Debug</h1>
+    <p class="motto">fix these programs in your daily routine</p>
+
+    <div class="hr"></div>
+
+    <div class="section-title">Choose your daily debug</div>
+
+    <section class="cards" aria-label="Mode selection">
+      <article class="card">
+        <div>
+          <h3>Easy</h3>
+          <p>Small fixes. Usually one line. Mostly syntax slips or obvious logic.</p>
+        </div>
+        <a class="btn" href="easy.html">Start Easy</a>
+      </article>
+
+      <article class="card">
+        <div>
+          <h3>Medium</h3>
+          <p>A little more thinking. You may patch logic, edge cases, or add a missing line.</p>
+        </div>
+        <a class="btn" href="medium.html">Start Medium</a>
+      </article>
+
+      <article class="card">
+        <div>
+          <h3>Hard</h3>
+          <p>Trickier bugs. Expect subtle errors, incomplete functions, and careful debugging.</p>
+        </div>
+        <a class="btn" href="hard.html">Start Hard</a>
+      </article>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="left">© DailyDebug™</div>
+    <div class="right">
+      <a href="mailto:help@dailydebug.example">Ask a question</a>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

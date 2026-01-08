@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Daily Debug — Notifications</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <div class="fab-wrap"><div class="fab" data-menu-btn>MENU</div></div>
+  <div class="fab-right">
+    <div class="fab" data-archive-btn>ARC</div>
+    <div class="fab" data-streak-btn>STR</div>
+    <div class="fab" data-notifs-btn>NOT</div>
+    <div class="fab" data-profile-btn>PRO</div>
+  </div>
+
+  <div class="sidenav-backdrop"></div>
+  <aside class="sidenav">
+    <div style="display:flex; justify-content:space-between; align-items:center;">
+      <h2>Menu</h2>
+      <button class="btn" data-close-nav>Close</button>
+    </div>
+    <a href="pricing.html">Pricing</a>
+    <a href="profile.html">Profile</a>
+  </aside>
+
+  <div class="top-date" data-today></div>
+
+  <main class="container">
+    <div class="page-head">
+      <h1>Notifications</h1>
+      <div class="meta"><a href="index.html">Home</a> / notifications</div>
+    </div>
+
+    <div class="hr"></div>
+
+    <section class="panel">
+      <h2>Inbox</h2>
+      <div class="desc">
+        <ul>
+          <li>[mock] New daily challenge is live.</li>
+          <li>[mock] Your streak is at risk. Don’t blink.</li>
+          <li>[mock] Pro tip: read the error message slowly.</li>
+        </ul>
+      </div>
+      <div class="notice">Later: real notifications + unread state.</div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="left">© DailyDebug™</div>
+    <div class="right"><a href="mailto:help@dailydebug.example">Ask a question</a></div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

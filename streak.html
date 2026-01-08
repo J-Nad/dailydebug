@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Daily Debug — Streak</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <div class="fab-wrap"><div class="fab" data-menu-btn>MENU</div></div>
+  <div class="fab-right">
+    <div class="fab" data-archive-btn>ARC</div>
+    <div class="fab" data-streak-btn>STR</div>
+    <div class="fab" data-notifs-btn>NOT</div>
+    <div class="fab" data-profile-btn>PRO</div>
+  </div>
+
+  <div class="sidenav-backdrop"></div>
+  <aside class="sidenav">
+    <div style="display:flex; justify-content:space-between; align-items:center;">
+      <h2>Menu</h2>
+      <button class="btn" data-close-nav>Close</button>
+    </div>
+    <a href="pricing.html">Pricing</a>
+    <a href="profile.html">Profile</a>
+  </aside>
+
+  <div class="top-date" data-today></div>
+
+  <main class="container">
+    <div class="page-head">
+      <h1>Streak</h1>
+      <div class="meta"><a href="index.html">Home</a> / streak</div>
+    </div>
+
+    <div class="hr"></div>
+
+    <div class="grid">
+      <section class="panel">
+        <h2>Current</h2>
+        <div class="desc">
+          <p><strong>Current streak:</strong> (mock)</p>
+          <p><strong>Best streak:</strong> (mock)</p>
+        </div>
+      </section>
+
+      <section class="panel">
+        <h2>Calendar</h2>
+        <div class="desc">
+          <p>Old-school view:</p>
+          <pre class="output">
+[ ] [ ] [X] [X] [ ] [X] [ ]
+[ ] [X] [X] [ ] [ ] [ ] [ ]
+          </pre>
+        </div>
+        <div class="notice">Later: real calendar + timezone logic.</div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="left">© DailyDebug™</div>
+    <div class="right"><a href="mailto:help@dailydebug.example">Ask a question</a></div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
