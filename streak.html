@@ -4,66 +4,102 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Daily Debug — Streak</title>
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="./styles.css" />
 </head>
 <body>
 
-  <div class="fab-wrap"><div class="fab" data-menu-btn>MENU</div></div>
-  <div class="fab-right">
-    <div class="fab" data-archive-btn>ARC</div>
-    <div class="fab" data-streak-btn>STR</div>
-    <div class="fab" data-notifs-btn>NOT</div>
-    <div class="fab" data-profile-btn>PRO</div>
+  <!-- Floating Menu (left) -->
+  <div class="fab-wrap">
+    <div class="fab" role="button" tabindex="0" aria-label="Menu" data-menu-btn>
+      MENU
+    </div>
   </div>
 
+  <!-- Floating Actions (right) -->
+  <div class="fab-right">
+    <div class="fab" role="button" tabindex="0" aria-label="Archive" data-archive-btn>ARC</div>
+    <div class="fab" role="button" tabindex="0" aria-label="Streak" data-streak-btn>STR</div>
+    <div class="fab" role="button" tabindex="0" aria-label="Notifications" data-notifs-btn>NOT</div>
+    <div class="fab" role="button" tabindex="0" aria-label="Profile" data-profile-btn>PRO</div>
+  </div>
+
+  <!-- Side Nav -->
   <div class="sidenav-backdrop"></div>
-  <aside class="sidenav">
+  <aside class="sidenav" aria-label="Side navigation">
     <div style="display:flex; justify-content:space-between; align-items:center;">
       <h2>Menu</h2>
       <button class="btn" data-close-nav>Close</button>
     </div>
-    <a href="pricing.html">Pricing</a>
-    <a href="profile.html">Profile</a>
+    <a href="./pricing.html">Pricing</a>
+    <a href="./profile.html">Profile</a>
+    <div class="notice">Retro. Minimal. Focused.</div>
   </aside>
 
+  <!-- Date -->
   <div class="top-date" data-today></div>
 
+  <!-- Main Content -->
   <main class="container">
+
     <div class="page-head">
       <h1>Streak</h1>
-      <div class="meta"><a href="index.html">Home</a> / streak</div>
+      <div class="meta">
+        <a href="./index.html">Home</a> / streak
+      </div>
     </div>
 
     <div class="hr"></div>
 
     <div class="grid">
+
+      <!-- Live Streak Panel -->
       <section class="panel">
-        <h2>Current</h2>
-        <div class="desc">
-          <p><strong>Current streak:</strong> (mock)</p>
-          <p><strong>Best streak:</strong> (mock)</p>
+        <h2>Your Streak (Live)</h2>
+        <div class="desc" data-streak-status>
+          Loading account…
+        </div>
+
+        <pre class="output" data-streak-out>
+[waiting for data]
+        </pre>
+
+        <div class="notice">
+          This data is pulled securely from Supabase using your session.
         </div>
       </section>
 
+      <!-- Retro Calendar / Visual -->
       <section class="panel">
-        <h2>Calendar</h2>
+        <h2>Visual History</h2>
         <div class="desc">
-          <p>Old-school view:</p>
-          <pre class="output">
-[ ] [ ] [X] [X] [ ] [X] [ ]
-[ ] [X] [X] [ ] [ ] [ ] [ ]
-          </pre>
+          Old-school streak view:
         </div>
-        <div class="notice">Later: real calendar + timezone logic.</div>
+
+        <pre class="output">
+[ ] [X] [X] [X] [ ] [X] [X]
+[X] [X] [ ] [ ] [X] [X] [ ]
+[ ] [ ] [ ] [X] [X] [ ] [ ]
+        </pre>
+
+        <div class="notice">
+          Later: real calendar, timezone-safe.
+        </div>
       </section>
+
     </div>
   </main>
 
+  <!-- Footer -->
   <footer class="footer">
     <div class="left">© DailyDebug™</div>
-    <div class="right"><a href="mailto:help@dailydebug.example">Ask a question</a></div>
+    <div class="right">
+      <a href="mailto:help@dailydebug.example">Ask a question</a>
+    </div>
   </footer>
 
-  <script src="app.js"></script>
+  <!-- Scripts -->
+  <script type="module" src="./streakClient.js"></script>
+  <script src="./app.js"></script>
+
 </body>
 </html>
