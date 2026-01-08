@@ -1,0 +1,23 @@
+{
+  "title": "Memoized Fibonacci",
+  "gems": 3,
+  "description": "This fib function should memoize results. Fix the caching bug. Do not edit locked lines.",
+  "lines": [
+    { "locked": true,  "text": "# DailyDebug Hard" },
+    { "locked": true,  "text": "def fib(n, memo=None):" },
+    { "locked": true,  "text": "    if memo is None:" },
+    { "locked": true,  "text": "        memo = {}" },
+    { "locked": true,  "text": "    if n in memo:" },
+    { "locked": true,  "text": "        return memo[n]" },
+    { "locked": true,  "text": "    if n <= 1:" },
+    { "locked": true,  "text": "        return n" },
+    { "locked": false, "text": "    memo = {n: fib(n-1, memo) + fib(n-2, memo)}" },
+    { "locked": false, "text": "" },
+    { "locked": true,  "text": "    return memo[n]" }
+  ],
+  "tests": [
+    { "name": "fib10", "code": "assert fib(10) == 55" },
+    { "name": "fib1", "code": "assert fib(1) == 1" },
+    { "name": "fib0", "code": "assert fib(0) == 0" }
+  ]
+}
