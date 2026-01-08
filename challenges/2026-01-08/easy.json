@@ -1,0 +1,17 @@
+{
+  "title": "Sum Printer",
+  "gems": 1,
+  "description": "Fix the syntax bug so the program prints 5.",
+  "lines": [
+    { "locked": true,  "text": "# DailyDebug Easy" },
+    { "locked": true,  "text": "def add(a, b):" },
+    { "locked": true,  "text": "    return a + b" },
+    { "locked": true,  "text": "" },
+    { "locked": true,  "text": "x = 2" },
+    { "locked": true,  "text": "y = 3" },
+    { "locked": false, "text": "print(add(x, y)" }
+  ],
+  "tests": [
+    { "name": "prints 5", "code": "assert add(2,3) == 5" }
+  ]
+}
